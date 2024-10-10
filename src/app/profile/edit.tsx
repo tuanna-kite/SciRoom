@@ -1,9 +1,8 @@
-import { Alert, Pressable, Text, View } from 'react-native'
+import { Alert, Pressable, View } from 'react-native'
 import ScreenWrapper from '@/components/ScreenWrapper'
 import { useAppDispatch, useAppSelector } from '@/redux'
 import Avatar from '@/components/ui/Avatar'
 import { Icon } from '@/components/ui/Icon'
-import { ERouteTable } from '@/constants/route-table'
 import { router } from 'expo-router'
 import BackButton from '@/components/ui/BackButton'
 import Input from '@/components/ui/Input'
@@ -97,6 +96,7 @@ const ProfileEdit = () => {
           <Avatar size="lg" uri={image} />
           <Pressable
             className="bg-white p-[6px] rounded-full shadow-sm shadow-black/30 absolute bottom-0 right-0 z-10"
+            style={{ elevation: 20 }}
             onPress={() => onPickImage()}
           >
             <Icon name="camera-outline" size={20} color="#4b5563" />

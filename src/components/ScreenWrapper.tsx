@@ -9,7 +9,8 @@ interface Props {
 
 const ScreenWrapper = ({ children, bg, safeBottom = false }: Props) => {
   const { top, bottom } = useSafeAreaInsets()
-  const paddingTop = top > 0 ? top + 5 : 30
+
+  const paddingTop = top > 0 ? top + 12 : 30
   const paddingBottom = safeBottom ? bottom + 5 : 0
 
   return <View style={{ flex: 1, paddingTop, paddingBottom, backgroundColor: bg }}>{children}</View>

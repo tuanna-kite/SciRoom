@@ -20,10 +20,6 @@ const SignIn = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const onAdminSubmit = () => {
-    router.replace(ERouteTable.ADMIN_DASHBOARD)
-  }
-
   const onSubmit = async () => {
     try {
       setLoading(true)

@@ -20,6 +20,7 @@ import { RealtimePostgresChangesPayload } from '@supabase/supabase-js'
 import { getUserData } from '@/services/users'
 import colors from 'theme/color'
 import axios from 'axios'
+import ScreenWrapper from '@/components/ScreenWrapper'
 
 const PostDetail = () => {
   const { postId = '' } = useLocalSearchParams<{ postId: string }>()
@@ -49,7 +50,15 @@ const PostDetail = () => {
     formData.append('api_secret', 'RT3ViYhXun5J9j5BMncGHdK7WSmpwDyP')
 
     try {
-      const { data } = await axios.post('https://api.sightengine.com/1.0/text/check.json', formData)
+      const { data } = await axios.post(
+        'https://api.sightengine.com/1.0/text/check.json',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        },
+      )
 
       const fields = ['sexual', 'discriminatory', 'insulting', 'violent', 'toxic', 'self-harm']
       console.log(JSON.stringify(data, null, 2))
@@ -159,58 +168,60 @@ const PostDetail = () => {
   }, [])
 
   return (
-    <View className="flex-1 bg-white items-center justify-center">
-      {!post ? (
-        <ActivityIndicator size="large" color={colors.primary[600]} />
-      ) : (
-        <ScrollView className="w-full" showsVerticalScrollIndicator={false}>
-          <View className="w-full px-2">
-            <PostCard
-              post={post}
-              currentUser={profile}
-              showMore={false}
-              showEdit={true}
-              onEdit={onEditPost}
-              onDelete={onDeletePost}
-            />
-          </View>
-          <View className="flex-row space-x-4 items-center px-4">
-            <Input
-              placeholder="Write a comment..."
-              containerStyle="flex-1"
-              onSubmitEditing={() => {}}
-              value={comment}
-              onChangeText={setComment}
-            />
-            {loading ? (
-              <ActivityIndicator color={colors.primary[600]} />
-            ) : (
-              <TouchableOpacity onPress={onNewComment} disabled={comment.length === 0}>
-                <Icon
-                  name="send-outline"
-                  size={24}
-                  color={comment.length ? colors.primary[600] : 'gray'}
-                />
-              </TouchableOpacity>
-            )}
-          </View>
-          <View className="pb-20">
-            {Number(post?.comments?.length) > 0 && (
-              <FlatList
-                data={post.comments}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <CommentItem data={item} />}
-                scrollEnabled={false}
+    <ScreenWrapper>
+      <View className="flex-1 bg-white items-center justify-center">
+        {!post ? (
+          <ActivityIndicator size="large" color={colors.primary[600]} />
+        ) : (
+          <ScrollView className="w-full" showsVerticalScrollIndicator={false}>
+            <View className="w-full px-2">
+              <PostCard
+                post={post}
+                currentUser={profile}
+                showMore={false}
+                showEdit={true}
+                onEdit={onEditPost}
+                onDelete={onDeletePost}
               />
-            )}
+            </View>
+            <View className="flex-row space-x-4 items-center px-4">
+              <Input
+                placeholder="Write a comment..."
+                containerStyle="flex-1"
+                onSubmitEditing={() => {}}
+                value={comment}
+                onChangeText={setComment}
+              />
+              {loading ? (
+                <ActivityIndicator color={colors.primary[600]} />
+              ) : (
+                <TouchableOpacity onPress={onNewComment} disabled={comment.length === 0}>
+                  <Icon
+                    name="send-outline"
+                    size={24}
+                    color={comment.length ? colors.primary[600] : 'gray'}
+                  />
+                </TouchableOpacity>
+              )}
+            </View>
+            <View className="pb-20">
+              {Number(post?.comments?.length) > 0 && (
+                <FlatList
+                  data={post.comments}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item }) => <CommentItem data={item} />}
+                  scrollEnabled={false}
+                />
+              )}
 
-            {post?.comments?.length === 0 && (
-              <Text className="text-center text-gray-400 text-base my-6">No comments yet</Text>
-            )}
-          </View>
-        </ScrollView>
-      )}
-    </View>
+              {post?.comments?.length === 0 && (
+                <Text className="text-center text-gray-400 text-base my-6">No comments yet</Text>
+              )}
+            </View>
+          </ScrollView>
+        )}
+      </View>
+    </ScreenWrapper>
   )
 }
 

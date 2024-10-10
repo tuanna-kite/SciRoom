@@ -93,7 +93,15 @@ const CreatePost = () => {
     setLoading(true)
 
     try {
-      const { data } = await axios.post('https://api.sightengine.com/1.0/text/check.json', formData)
+      const { data } = await axios.post(
+        'https://api.sightengine.com/1.0/text/check.json',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        },
+      )
 
       const fields = ['sexual', 'discriminatory', 'insulting', 'violent', 'toxic', 'self-harm']
       console.log(JSON.stringify(data, null, 2))

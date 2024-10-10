@@ -35,7 +35,7 @@ export async function getUserData(userId: string) {
 export const getUserImage = (uri?: string | null) => {
   try {
     if (!uri) {
-      return require('@/assets/images/defaultUser.png')
+      return require('@/assets/images/defaultUser.jpeg')
     }
 
     if (uri.startsWith('file://')) {
@@ -45,7 +45,7 @@ export const getUserImage = (uri?: string | null) => {
     return { uri: `${env.SUPABASE_URL}/storage/v1/object/public/social_media/${uri}` }
   } catch (error: any) {
     console.error(error)
-    return require('@/assets/images/defaultUser.png')
+    return require('@/assets/images/defaultUser.jpeg')
   }
 }
 
