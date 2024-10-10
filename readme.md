@@ -8,7 +8,7 @@ SciRoom is a social network designed to foster the exchange of information and i
 
 **User Authentication**: Users can register and log in using their email and password, ensuring secure access.
 
-<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/1.png?t=2024-10-10T07%3A03%3A29.899Z">
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/1.png?t=2024-10-10T07%3A03%3A29.899Z" width="800" height="400">
 
 ## **For Regular Users**:
 
@@ -20,7 +20,7 @@ SciRoom is a social network designed to foster the exchange of information and i
 - **Content Moderation**: Ability to block offensive, violent, or sensitive comments or articles.
 - **Infinite Scroll & Pagination**: For smooth navigation and better data transmission efficiency.
 
-<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/2.png">
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/2.png" width="800" height="400">
 
 ### **For Admins**
 
@@ -28,7 +28,7 @@ SciRoom is a social network designed to foster the exchange of information and i
 - **User Blocking**: Admins can block users who violate ethical standards or frequently use violent language.
 - **Report Handling**: Admins can review reports and delete violating posts from the system.
 
-<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/3.png">
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/3.png" width="800px" height="400">
 
 ### Technology Stack
 
