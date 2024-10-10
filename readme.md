@@ -6,6 +6,7 @@ SciRoom is a social network designed to foster the exchange of information and i
 ## Key Features
 
 - **User Authentication**: Users can register and log in using their email and password, ensuring secure access.
+![Image](https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/0_logo.jpg?t=2024-10-10T06%3A55%3A10.154Z)
 
 - **For Regular Users**:
   - **View and Interact**: Browse scientific articles shared by other users and like or comment on articles of interest.
