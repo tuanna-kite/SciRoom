@@ -9,6 +9,10 @@ import Button from '@/components/ui/Button'
 import { router } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'
 import { supabase } from '@/lib/supabase'
+import { useAppDispatch } from '@/redux'
+import { getUserData } from '@/services/users'
+import { setUser } from '@/redux/userSlice'
+import { Session } from '@supabase/supabase-js'
 
 const styles = {
   title: 'text-4xl text-gray-800 font-psemibold',
@@ -19,6 +23,27 @@ const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const dispatch = useAppDispatch()
+
+  async function updateProfileState(session: Session) {
+    try {
+      const res = await getUserData(session.user.id)
+      if (res.success) {
+        dispatch(setUser({ session, profile: res.data }))
+        if (res.data?.email.toLowerCase() === 'admin@gmail.com') {
+          router.replace(ERouteTable.ADMIN_DASHBOARD)
+        } else {
+          router.replace(ERouteTable.HOME)
+        }
+        return { session, profile: res.data }
+      } else {
+        Alert.alert('getUserData', res.message)
+      }
+    } catch (error: any) {
+      console.error(error)
+      Alert.alert('Error', error)
+    }
+  }
 
   const onSubmit = async () => {
     try {
@@ -31,7 +56,7 @@ const SignIn = () => {
         return Alert.alert('Error', 'Please fill all the fields!')
       }
 
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error, data } = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password,
       })
@@ -39,6 +64,7 @@ const SignIn = () => {
       if (error) {
         throw error
       }
+      await updateProfileState(data!.session)
     } catch (error) {
       console.error(error)
       Alert.alert('Login', 'There was an error logging in', [{ text: 'OK' }])

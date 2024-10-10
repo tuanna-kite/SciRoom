@@ -51,8 +51,8 @@ const SignUp = () => {
       if (error) {
         throw error
       }
-
-      // router.replace(ERouteTable.HOME)
+      Alert.alert('Sign Up', 'Account created successfully. Please login to continue.')
+      router.replace(ERouteTable.SIGIN_IN)
     } catch (error) {
       console.error(error)
       Alert.alert('Error', 'Something went wrong!')

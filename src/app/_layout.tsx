@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import store from '@/redux'
 import { LogBox } from 'react-native'
+import { ERouteTable } from '@/constants/route-table'
 
 LogBox.ignoreAllLogs()
 SplashScreen.preventAutoHideAsync()
@@ -28,7 +29,7 @@ const RootLayout = () => {
   if (!fontsLoaded) return null
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerShown: false }} initialRouteName='welcome'>
       <Stack.Screen name="posts/detail" options={{ presentation: 'modal' }} />
       <Stack.Screen name="posts/favorites" options={{ presentation: 'modal' }} />
       <Stack.Screen name="profile/show" options={{ presentation: 'modal' }} />

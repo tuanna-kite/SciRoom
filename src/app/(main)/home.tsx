@@ -39,13 +39,11 @@ const Home = () => {
 
   const handlePostEvent = async (payload: RealtimePostgresChangesPayload<Post>) => {
     if (payload.eventType === 'INSERT' && payload.new.id) {
-      console.log('INSERT - INSERT')
-
       const { data, success } = await getUserData(payload.new.userId)
       const newPost = { ...payload.new }
       if (success && data) {
         newPost.user = data
-        setPosts((prevPosts) => [newPost, ...prevPosts])
+        // setPosts((prevPosts) => [newPost, ...prevPosts])
       }
     } else if (payload.eventType === 'DELETE' && payload.old.id) {
       setPosts((prevPosts) => prevPosts.filter((post) => post.id !== payload.old.id))
@@ -116,6 +114,8 @@ const Home = () => {
               <FlatList
                 renderItem={({ item }) => <PostCard currentUser={profile!} post={item} />}
                 data={posts}
+                onRefresh={() => getPosts()}
+                refreshing={loading}
                 // keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingTop: 12 }}

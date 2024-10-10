@@ -1,5 +1,6 @@
 import { env } from '@/env-config'
 import { supabase } from '@/lib/supabase'
+import { Alert } from 'react-native'
 
 export interface UserProfile {
   id: string
@@ -21,13 +22,13 @@ export async function getUserData(userId: string) {
       .select()
       .eq('id', userId)
       .single<UserProfile>()
-
     if (error) {
       return { success: false, message: error.message }
     }
     return { success: true, data }
   } catch (error: any) {
     console.error(error)
+    Alert.alert('getUserData error', JSON.stringify(error))
     return { success: false, message: error.message }
   }
 }
