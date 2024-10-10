@@ -1,3 +1,4 @@
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/0_logo.jpg?t=2024-10-10T06%3A55%3A10.154Z" width="100" height="100">
 
 # SciRoom Application
 
@@ -5,21 +6,29 @@ SciRoom is a social network designed to foster the exchange of information and i
 
 ## Key Features
 
-- **User Authentication**: Users can register and log in using their email and password, ensuring secure access.
-![Image]()
-<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/0_logo.jpg?t=2024-10-10T06%3A55%3A10.154Z" width="100" height="100">
-- **For Regular Users**:
-  - **View and Interact**: Browse scientific articles shared by other users and like or comment on articles of interest.
-  - **Content Creation**: Write and share your own articles, with support for HTML formatting to make your content structured and visually appealing.
-  - **Multimedia Support**: Upload photos and videos along with your articles for better engagement.
-  - **Content Reporting**: Report any articles containing unethical or inappropriate content.
-  - **Professor Verification**: Verified professors are marked with a blue tick, giving their content credibility.
-  - **Content Moderation**: Ability to block offensive, violent, or sensitive comments or articles.
-  - **Infinite Scroll & Pagination**: For smooth navigation and better data transmission efficiency.
-- **For Admins**:
-  - **User and Content Management**: View statistics on total users and articles, search users by email, and manage reports of content violations.
-  - **User Blocking**: Admins can block users who violate ethical standards or frequently use violent language.
-  - **Report Handling**: Admins can review reports and delete violating posts from the system.
+**User Authentication**: Users can register and log in using their email and password, ensuring secure access.
+
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/1.png?t=2024-10-10T07%3A03%3A29.899Z" height="400">
+
+## **For Regular Users**:
+
+- **View and Interact**: Browse scientific articles shared by other users and like or comment on articles of interest.
+- **Content Creation**: Write and share your own articles, with support for HTML formatting to make your content structured and visually appealing.
+- **Multimedia Support**: Upload photos and videos along with your articles for better engagement.
+- **Content Reporting**: Report any articles containing unethical or inappropriate content.
+- **Professor Verification**: Verified professors are marked with a blue tick, giving their content credibility.
+- **Content Moderation**: Ability to block offensive, violent, or sensitive comments or articles.
+- **Infinite Scroll & Pagination**: For smooth navigation and better data transmission efficiency.
+
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/2.png" height="400">
+
+### **For Admins**
+
+- **User and Content Management**: View statistics on total users and articles, search users by email, and manage reports of content violations.
+- **User Blocking**: Admins can block users who violate ethical standards or frequently use violent language.
+- **Report Handling**: Admins can review reports and delete violating posts from the system.
+
+<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/3.png" height="400">
 
 ### Technology Stack
 
