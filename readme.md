@@ -10,6 +10,11 @@ SciRoom is a social network designed to foster the exchange of information and i
 
 ![alt text](https://github.com/tuanna-kite/SciRoom/blob/main/demo/1.png?raw=true)
 
+
+![Demo](https://raw.githubusercontent.com/tuanna-kite/SciRoom/refs/heads/main/3.png)
+
+
+
 ## **For Regular Users**:
 
 - **View and Interact**: Browse scientific articles shared by other users and like or comment on articles of interest.
