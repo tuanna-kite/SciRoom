@@ -1,4 +1,4 @@
-<img src="https://bocorolulpdyyqsfyaux.supabase.co/storage/v1/object/public/social_media/demo/0_logo.jpg?t=2024-10-10T06%3A55%3A10.154Z" width="100" height="100">
+<img src="https://github.com/tuanna-kite/SciRoom/blob/main/demo/0_logo.jpg?raw=true" width="100" height="100">
 
 # SciRoom Application
 
